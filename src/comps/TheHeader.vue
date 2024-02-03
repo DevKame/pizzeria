@@ -1,5 +1,5 @@
 <template>
-    <header class="d-flex flex-column justify-content-start align-items-center border border-success">
+    <header class="d-flex flex-column justify-content-end align-items-center border border-success">
         <!-- WRAPPER FOR THE PALMS AND THE SVG HEADLINE -->
         <div class="palmsHeadlineWrapper d-flex flex-column jsutify-content-start align-items-center">
             <!-- WRAPPER FOR THE PALMS -->
@@ -24,6 +24,12 @@
             </div>
             <div class="telWrapper bg-tert d-flex justify-content-center align.items-center py-2 px-2">
                 <a class="text-prim" href="tel:04405489094">04405 - 48 90 94</a>
+            </div>
+            <dividing-bar></dividing-bar>
+            <dividing-bar></dividing-bar>
+            <div class="d-flex flex-column justify-content-center align-items-center py-2 px-3">
+                <h5 class="m-0 text-red text-center">LIEFERZEITEN</h5>
+                <h6 class="m-0 text-red text-center">18:00 - 22:00 Uhr</h6>
             </div>
         </div>
     </header>

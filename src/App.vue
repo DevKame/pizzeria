@@ -1,5 +1,6 @@
 <template>
   <the-header></the-header>
+  <the-nav></the-nav>
 </template>
 
 <script setup>
