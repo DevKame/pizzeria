@@ -1,0 +1,19 @@
+
+.bg-prim {
+    background-color: var(--prim);
+}
+.bg-sec {
+    background-color: var(--sec);
+}
+.bg-tert {
+    background-color: var(--tert);
+}
+.text-prim {
+    color: var(--text-prim);
+}
+.text-brown {
+    color: var(--text-brown);
+}
+.text-red {
+    color: var(--text-red);
+}
