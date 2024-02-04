@@ -23,5 +23,6 @@ nav {
     height: 50px;
     border: 3px solid var(--text-prim);
     box-shadow: 0 0 10px 5px black inset;
+    z-index: 5;
 }
 </style>

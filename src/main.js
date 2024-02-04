@@ -10,6 +10,7 @@ import "./assets/styles/classes.css";
 // CUSTOM COMPS
 import DividingBar from "./comps/multi/DividingBar.vue";
 import TheNav from "./comps/TheNav.vue";
+import FoodCategory from "./comps/multi/FoodCategory.vue";
 
 
 
@@ -17,4 +18,5 @@ const app = createApp(App);
 
 app.component("dividing-bar", DividingBar);
 app.component("the-nav", TheNav);
+app.component("food-cat", FoodCategory);
 app.mount('#app')
