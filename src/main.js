@@ -12,10 +12,22 @@ import DividingBar from "./comps/multi/DividingBar.vue";
 import TheNav from "./comps/TheNav.vue";
 import FoodCategory from "./comps/multi/FoodCategory.vue";
 
+// FA ICONS
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+
+import { faBackward } from '@fortawesome/free-solid-svg-icons';
+import { faForward } from '@fortawesome/free-solid-svg-icons';
+
+
+library.add(faBackward);
+library.add(faForward);
+
 
 
 const app = createApp(App);
 
+app.component("fa-icon", FontAwesomeIcon);
 app.component("dividing-bar", DividingBar);
 app.component("the-nav", TheNav);
 app.component("food-cat", FoodCategory);

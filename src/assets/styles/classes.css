@@ -8,6 +8,12 @@
 .bg-tert {
     background-color: var(--tert);
 }
+.bg-red {
+    background-color: var(--red);
+}
+.bg-grey {
+    background-color: var(--grey);
+}
 .text-prim {
     color: var(--text-prim);
 }

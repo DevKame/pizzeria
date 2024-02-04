@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import { defineProps, onMounted } from "vue";
+import { defineProps } from "vue";
 import CatItem from "./CatItem.vue";
 let props = defineProps([
     "headline",
@@ -20,10 +20,6 @@ let props = defineProps([
     "subRed",
     "items",
 ]);
-
-onMounted(() => {
-    console.table(props);
-});
 </script>
 
 

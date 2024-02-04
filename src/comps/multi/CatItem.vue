@@ -20,15 +20,10 @@
 </template>
 
 <script setup>
-import { defineProps, onMounted, computed } from "vue";
+import { defineProps, computed } from "vue";
 let props = defineProps([
     "item",
 ]);
-
-onMounted(() => {
-    console.warn("");
-    console.table(props.item);
-})
 
 const fontcolorClass = computed(() => props.item.veggie ? "text-green" : "text-prim");
 </script>
