@@ -30,6 +30,7 @@ import { ref } from "vue";
 
 const movingNav = ref();
 function swipeRight() {
+    //TODO: wie entscheide ich wann beim rechts drücken nicht mehr nach rechts geswiped wird?
     let navleft = +((getComputedStyle(movingNav.value).left).replace("px", ""));
     console.log(navleft);
     movingNav.value.style.left = (navleft - 30).toString() + "px";
