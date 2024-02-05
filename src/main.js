@@ -18,10 +18,12 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 
 import { faBackward } from '@fortawesome/free-solid-svg-icons';
 import { faForward } from '@fortawesome/free-solid-svg-icons';
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 
 library.add(faBackward);
 library.add(faForward);
+library.add(faFacebook);
 
 
 

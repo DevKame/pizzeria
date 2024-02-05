@@ -2,14 +2,35 @@
   <the-header></the-header>
   <the-nav></the-nav>
   <dividing-bar></dividing-bar>
-  <food-cat headline="VORSPEISEN" :items="vorspeisen"></food-cat>
-  <food-cat headline="SALATE"
+  <div class="openingHours text-prim d-flex flex-column justify-content-start align-items-center border border-white">
+    <dividing-bar></dividing-bar>
+    <div class="mt-3 d-flex justify-content-between align-items-center">
+      <p>Di. - Sa.</p>
+      <p>17:00 - 22:30 Uhr</p>
+    </div>
+    <div class="d-flex justify-content-between align-items-center">
+      <p>So. & Feiertage</p>
+      <p>15:00 - 22:00 Uhr</p>
+    </div>
+    <div class="mb-3 d-flex justify-content-between align-items-center">
+      <p>Montag (außer Feiertage) Ruhetag</p>
+    </div>
+    <div class="mb-3 d-flex justify-content-between align-items-center">
+      <a href="https://www.facebook.com/PizzeriaLaPalmaEdewecht" target="_blank">
+        <fa-icon icon="fa-brands fa-facebook" size="xl" class="me-2"></fa-icon>
+        Pizzeria La Palma Edewecht
+      </a>
+    </div>
+    <dividing-bar></dividing-bar>
+  </div>
+  <food-cat v-if="displayCat === 'vorspeisen'" headline="VORSPEISEN" :items="vorspeisen"></food-cat>
+  <food-cat v-if="displayCat === 'salate'" headline="SALATE"
   sub-brown="Alle Salate mit Tomaten, Gurke, Eisbergsalat, Zwiebeln, Peperoni, Mais, Käse & Spezialdressing"
   sub-red="Alle Salate mit Brot auf Wunsch"
   :items="salate"></food-cat>
-  <food-cat headline="KEBAB / GYROS"
+  <food-cat v-if="displayCat === 'kebabs'" headline="KEBAB / GYROS"
   :items="kebabs"></food-cat>
-  <food-cat headline="BAGUETTES"
+  <food-cat v-if="displayCat === 'baguettes'" headline="BAGUETTES"
   sub-brown="Alle Baguettes mit Spezialdressing"
   :items="baguettes"></food-cat>
 </template>
@@ -18,6 +39,7 @@
 import { ref } from "vue";
 import TheHeader from "./comps/TheHeader.vue";
 
+const displayCat = ref("vorspeisen");
 const vorspeisen = ref(
   [
     {
@@ -266,6 +288,9 @@ const baguettes = ref(
 </script>
 
 <style>
+.openingHours a {
+  color: var(--text-prim);
+}
 .i_sm {
   font-size: .8em;
 }

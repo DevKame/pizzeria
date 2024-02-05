@@ -7,7 +7,7 @@
         </div>
 
         <nav class="d-flex overflow-x-hidden position-relative justify-content-around align-items-center border border-danger">
-            <div class="movingItemsHolder position-absolute d-flex justify-content-around align-items-center py-2 px-1" ref="movingNav">
+            <div class="movingItemsHolder border border-success position-absolute d-flex justify-content-around align-items-center py-2 px-1" ref="movingNav">
             <span class="mx-2 px-2 rounded-pill bg-grey text-prim border border-black border-2">Öffnungszeiten</span>
             <span class="mx-2 px-2 rounded-pill bg-grey text-prim border border-black border-2">Über uns</span>
             <span class="mx-2 px-2 rounded-pill bg-grey text-prim border border-black border-2">Vorspeisen</span>
@@ -30,17 +30,25 @@ import { ref } from "vue";
 
 const movingNav = ref();
 function swipeRight() {
-    //TODO: wie entscheide ich wann beim rechts drücken nicht mehr nach rechts geswiped wird?
     let navleft = +((getComputedStyle(movingNav.value).left).replace("px", ""));
-    console.log(navleft);
-    movingNav.value.style.left = (navleft - 30).toString() + "px";
+    let navright = +((getComputedStyle(movingNav.value).right).replace("px", ""));
+    if(navright + 50 >= 0)
+    {
+        movingNav.value.style.left = (navleft - -(navright)).toString() + "px";
+    } else {
+        movingNav.value.style.left = (navleft - 50).toString() + "px";
+    }
 }
 function swipeLeft() {
     let navleft = +((getComputedStyle(movingNav.value).left).replace("px", ""));
-    console.log(navleft);
     if(navleft < 0)
     {
-        movingNav.value.style.left = (navleft + 30).toString() + "px";
+        if(navleft + 50 > 0)
+        {
+            movingNav.value.style.left = (navleft + -(navleft)).toString() + "px";
+        } else {
+            movingNav.value.style.left = (navleft + 50).toString() + "px";
+        }
     }
 }
 </script>
