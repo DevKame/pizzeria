@@ -153,6 +153,9 @@ header {
         left: 70%;
         bottom: -20%;
     }
+    .headlineWrapper{
+        padding-bottom: 20vh;
+    }
     .headlineWrapper img {
         bottom: -400%;
         width: 600px;

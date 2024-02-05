@@ -2,9 +2,9 @@
     <section class="d-flex flex-column justify-content-start align-items-center">
         <dividing-bar></dividing-bar>
         <div class="foodContent px-1 mt-2 d-flex flex-column justify-content-start align-items-start">
-            <h2 class="headline text-red">{{ $props.headline }}</h2>
-            <p v-if="subBrown" class="m-0 cat_subtext text-brown">{{ props.subBrown }}</p>
-            <p v-if="subRed" class="cat_subtext text-red">{{ props.subRed }}</p>
+            <h2 class="headline text-red ms-xl-5">{{ $props.headline }}</h2>
+            <p v-if="subBrown" class="ms-xl-5 m-0 cat_subtext text-brown">{{ props.subBrown }}</p>
+            <p v-if="subRed" class="ms-xl-5 cat_subtext text-red">{{ props.subRed }}</p>
             <cat-item v-for="item in props.items" :key="item.number" :item="item"></cat-item>
         </div>
         <dividing-bar></dividing-bar>
