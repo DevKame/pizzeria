@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
 import "./assets/styles/colors.css";
 import "./assets/styles/classes.css";
+import "./assets/fonts/fonts.css";
 
 // CUSTOM COMPS
 import DividingBar from "./comps/multi/DividingBar.vue";

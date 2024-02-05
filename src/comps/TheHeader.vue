@@ -37,6 +37,10 @@
 
 
 <style scoped>
+.headlineWrapper h1 {
+    font-size: 80px;
+    font-family: "Caveat HL";
+}
 a {
     text-decoration: none;
     font-size: 28px;
