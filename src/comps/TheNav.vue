@@ -6,13 +6,13 @@
             </div>
         </div>
 
-        <nav class="d-flex overflow-x-hidden position-relative justify-content-around align-items-center border border-danger">
-            <div class="movingItemsHolder border border-success position-absolute d-flex justify-content-around align-items-center py-2 px-1" ref="movingNav">
-            <span @click="setCat('aboutUs')" class="mx-2 px-2 rounded-pill bg-grey text-prim border border-black border-2">Über uns</span>
-            <span @click="setCat('vorspeisen')" class="mx-2 px-2 rounded-pill bg-grey text-prim border border-black border-2">Vorspeisen</span>
-            <span @click="setCat('salate')" class="mx-2 px-2 rounded-pill bg-grey text-prim border border-black border-2">Salate</span>
-            <span @click="setCat('kebabs')" class="mx-2 px-2 rounded-pill bg-grey text-prim border border-black border-2">Kebab / Gyros</span>
-            <span @click="setCat('baguettes')" class="mx-2 px-2 rounded-pill bg-grey text-prim border border-black border-2">Baguettes</span>
+        <nav class="d-flex overflow-x-hidden position-relative justify-content-around align-items-center">
+            <div class="movingItemsHolder position-absolute d-flex justify-content-around align-items-center py-2 px-1" ref="movingNav">
+            <span @click="setCat('aboutUs')" class="mx-2 px-2 rounded-pill bg-grey text-prim border-2">Über uns</span>
+            <span @click="setCat('vorspeisen')" class="mx-2 px-2 rounded-pill bg-grey text-prim border-2">Vorspeisen</span>
+            <span @click="setCat('salate')" class="mx-2 px-2 rounded-pill bg-grey text-prim border-2">Salate</span>
+            <span @click="setCat('kebabs')" class="mx-2 px-2 rounded-pill bg-grey text-prim border-2">Kebab / Gyros</span>
+            <span @click="setCat('baguettes')" class="mx-2 px-2 rounded-pill bg-grey text-prim border-2">Baguettes</span>
             </div>
         </nav>
 
@@ -62,6 +62,8 @@ function swipeLeft() {
 .movingItemsHolder {
     top: 0;
     left: 0;
+    min-width: 100%;
+    height: 100%;
     transition: left .1s ease-out;
 }
 nav span::selection {
@@ -70,6 +72,9 @@ nav span::selection {
 nav span {
     text-wrap: nowrap;
     font-size: 13px;
+    border: 2px solid var(--tert);
+    box-shadow: 0 0 0 3px black;
+    cursor: pointer;
 }
 .arrowHolder {
     width: 30px;
@@ -91,5 +96,16 @@ nav {
     border: 3px solid var(--text-prim);
     box-shadow: 0 0 10px 5px black inset;
     z-index: 5;
+}
+@media screen and (min-width: 1200px) {
+    .navHolder {
+        height: 100px;
+    }
+    .movingItemsHolder span {
+        font-size: 20px;
+    }
+    .arrowHolder {
+        width: 50px;
+    }
 }
 </style>

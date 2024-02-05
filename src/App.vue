@@ -3,25 +3,25 @@
   <the-nav @set-cat="setCat" ></the-nav>
   <dividing-bar></dividing-bar>
   <div class="openingHours text-prim d-flex flex-column justify-content-start align-items-center">
-    <dividing-bar></dividing-bar>
-    <div class="mt-3 d-flex justify-content-between align-items-center">
-      <p>Di. - Sa.</p>
-      <p>17:00 - 22:30 Uhr</p>
+    <dividing-bar class="mb-5"></dividing-bar>
+    <div class="mt-5 d-flex justify-content-between align-items-center">
+      <p class="ms-5 me-4">Di. - Sa.</p>
+      <p class="me-5">17:00 - 22:30 Uhr</p>
     </div>
     <div class="d-flex justify-content-between align-items-center">
-      <p>So. & Feiertage</p>
-      <p>15:00 - 22:00 Uhr</p>
+      <p class="ms-5 me-4">So. & Feiertage</p>
+      <p class="me-5">15:00 - 22:00 Uhr</p>
     </div>
-    <div class="mb-3 d-flex justify-content-between align-items-center">
+    <div class="mb-3 d-flex justify-content-center align-items-center">
       <p>Montag (außer Feiertage) Ruhetag</p>
     </div>
-    <div class="mb-3 d-flex justify-content-between align-items-center">
+    <div class="mb-3 d-flex justify-content-center align-items-center">
       <a href="https://www.facebook.com/PizzeriaLaPalmaEdewecht" target="_blank">
         <fa-icon icon="fa-brands fa-facebook" size="xl" class="me-2"></fa-icon>
         Pizzeria La Palma Edewecht
       </a>
     </div>
-    <dividing-bar></dividing-bar>
+    <dividing-bar class="mt-5"></dividing-bar>
   </div>
   <div class="overflow-hidden">
   <transition name="cats" mode="out-in">
@@ -309,6 +309,9 @@ function setCat(val) {
     text-decoration-color: var(--tert);
     text-decoration-thickness: 4px;
   }
+.openingHours > div {
+  width: 100%;
+}
 .openingHours a {
   color: var(--text-prim);
 }
@@ -334,5 +337,15 @@ function setCat(val) {
 .cats-leave-to {
   opacity: 0;
   transform: translate(60%, 20px);
+}
+@media screen and (min-width: 768px) {
+  .openingHours > div {
+    width: 60%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .openingHours {
+      font-size: 22px;
+  }
 }
 </style>

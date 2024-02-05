@@ -1,5 +1,5 @@
 <template>
-    <div :class="fontcolorClass" class="catItem my-1 d-flex justify-content-center align-items-start">
+    <div :class="fontcolorClass" class="catItem my-1 ms-xl-5 d-flex justify-content-center align-items-start">
         <div class="numberWrapper ps-1 d-flex justify-content-start align-items-center">
             {{ props.item.number }}
         </div>
@@ -13,7 +13,7 @@
             <p v-if="props.item.additional" v-html="props.item.additional" class="i_sm"></p>
         </div>
 
-        <div class="priceWrapper ps-1 d-flex justify-content-start align-items-center">
+        <div class="priceWrapper ps-1 me-xl-auto d-flex justify-content-start align-items-center">
             {{ props.item.price }}
         </div>
     </div>
@@ -39,5 +39,14 @@ const fontcolorClass = computed(() => props.item.veggie ? "text-green" : "text-p
 .catItem {
     width: 100%;
     font-size: 14px;
+}
+@media screen and (min-width: 1200px) {
+    .catItem {
+        font-size: 18px;
+    }
+    .descWrapper {
+        flex: none;
+        width: 50%;
+    }
 }
 </style>
