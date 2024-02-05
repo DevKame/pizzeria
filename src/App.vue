@@ -36,6 +36,7 @@
 </template>
 
 <script setup>
+
 import { ref } from "vue";
 import TheHeader from "./comps/TheHeader.vue";
 
