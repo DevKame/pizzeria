@@ -3,8 +3,11 @@
         <!-- WRAPPER FOR THE PALMS AND THE SVG HEADLINE -->
         <div class="palmsHeadlineWrapper d-flex flex-column jsutify-content-start align-items-center">
             <!-- WRAPPER FOR THE PALMS -->
-            <div class="palmsWrapper">
-
+            <div class="adressLink bg-tert py-3 px-2 rounded-pill d-flex justify-content-center align-items-center">
+                <a class="text-prim fw-bold d-flex justify-content-between align-items-center" href="https://www.google.de/maps/dir//Zur+Loge+1,+26188+Edewecht/@53.1356337,7.9037449,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x47b6e264ecd66189:0xd658cc4beb54f44f!2m2!1d7.986145!2d53.1356621?entry=ttu" target="_blank">
+                    <fa-icon icon="fa-solid fa-location-dot" class="me-3"></fa-icon>
+                    Zur Loge 1 | 26188 Edewecht
+                </a>
             </div>
 
             <!-- WRAPPER FOR THE SVG HEADLINE INCLUDING TOP AND BOTTOM BORDER -->
@@ -37,48 +40,52 @@
 
 
 <style scoped>
+.adressLink {
+    width: 90%;
+    margin-bottom: 30%;
+}
 .headlineWrapper h1 {
     font-size: 80px;
     font-family: "Caveat HL";
 }
-a {
+.telWrapper a {
     text-decoration: none;
     font-size: 28px;
 }
-    .telWrapper {
-        width: 100%;
-    }
-    .headlineWrapper img {
-        width: 120%;
-        left: -10%;
-        bottom: -100%;
-    }
-    .redLine {
-        width:100%;
-        height: 2px;
-        background-color: var(--sec);
-    }
-    .headlineWrapper{
-        width: 100%;
-        padding-bottom: 30vh;
-    }
-    .palmsHeadlineWrapper {
-        width: 100%;
-    }
-    header {
-        height: calc(100vh - 50px);
-        padding-top: 20vh;
-    }
+.telWrapper {
+    width: 100%;
+}
+.headlineWrapper img {
+    width: 120%;
+    left: -10%;
+    bottom: -100%;
+}
+.redLine {
+    width:100%;
+    height: 2px;
+    background-color: var(--sec);
+}
+.headlineWrapper{
+    width: 100%;
+    padding-bottom: 30vh;
+}
+.palmsHeadlineWrapper {
+    width: 100%;
+}
+header {
+    height: calc(100vh - 50px);
+    padding-top: 20vh;
+}
 
-    .pizza-enter-from {
-        opacity: 0;
-        bottom: -200%;
-    }
-    .pizza-enter-active {
-        transition: all 1s ease;
-    }
-    .pizza-enter-to {
-        opacity: 1;
-        bottom: -100%;
-    }
+.pizza-enter-from {
+    opacity: 0;
+    bottom: -200%;
+}
+.pizza-enter-active {
+    transition: all 1s ease;
+}
+.pizza-enter-to {
+    opacity: 1;
+    bottom: -100%;
+}
 </style>

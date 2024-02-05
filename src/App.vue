@@ -1,8 +1,8 @@
 <template>
   <the-header></the-header>
-  <the-nav></the-nav>
+  <the-nav @set-cat="setCat" ></the-nav>
   <dividing-bar></dividing-bar>
-  <div class="openingHours text-prim d-flex flex-column justify-content-start align-items-center border border-white">
+  <div class="openingHours text-prim d-flex flex-column justify-content-start align-items-center">
     <dividing-bar></dividing-bar>
     <div class="mt-3 d-flex justify-content-between align-items-center">
       <p>Di. - Sa.</p>
@@ -23,16 +23,26 @@
     </div>
     <dividing-bar></dividing-bar>
   </div>
-  <food-cat v-if="displayCat === 'vorspeisen'" headline="VORSPEISEN" :items="vorspeisen"></food-cat>
-  <food-cat v-if="displayCat === 'salate'" headline="SALATE"
-  sub-brown="Alle Salate mit Tomaten, Gurke, Eisbergsalat, Zwiebeln, Peperoni, Mais, Käse & Spezialdressing"
-  sub-red="Alle Salate mit Brot auf Wunsch"
-  :items="salate"></food-cat>
-  <food-cat v-if="displayCat === 'kebabs'" headline="KEBAB / GYROS"
-  :items="kebabs"></food-cat>
-  <food-cat v-if="displayCat === 'baguettes'" headline="BAGUETTES"
-  sub-brown="Alle Baguettes mit Spezialdressing"
-  :items="baguettes"></food-cat>
+  <div class="overflow-hidden">
+  <transition name="cats" mode="out-in">
+    <div v-if="displayCat === 'aboutUs'" class="aboutUs d-flex flex-column justify-content-start align-items-center">
+      <dividing-bar></dividing-bar>
+      <h2 class="orangeHL text-red me-auto ms-1">Pizzeria La Palma</h2>
+      <p class="ms-1 text-prim">Auf Wunsch erstelle ich Euch eine "Über uns" Seite mit Informationen/Bildern, die Ihr mir zur Verfügung stellt</p>
+      <dividing-bar></dividing-bar>
+    </div>
+    <food-cat v-else-if="displayCat === 'vorspeisen'" headline="VORSPEISEN" :items="vorspeisen"></food-cat>
+    <food-cat v-else-if="displayCat === 'salate'" headline="SALATE"
+    sub-brown="Alle Salate mit Tomaten, Gurke, Eisbergsalat, Zwiebeln, Peperoni, Mais, Käse & Spezialdressing"
+    sub-red="Alle Salate mit Brot auf Wunsch"
+    :items="salate"></food-cat>
+    <food-cat v-else-if="displayCat === 'kebabs'" headline="KEBAB / GYROS"
+    :items="kebabs"></food-cat>
+    <food-cat v-else-if="displayCat === 'baguettes'" headline="BAGUETTES"
+    sub-brown="Alle Baguettes mit Spezialdressing"
+    :items="baguettes"></food-cat>
+  </transition>
+  </div>
 </template>
 
 <script setup>
@@ -40,7 +50,7 @@
 import { ref } from "vue";
 import TheHeader from "./comps/TheHeader.vue";
 
-const displayCat = ref("vorspeisen");
+const displayCat = ref("aboutUs");
 const vorspeisen = ref(
   [
     {
@@ -286,13 +296,43 @@ const baguettes = ref(
     },
   ]
 );
+
+function setCat(val) {
+  console.log(val);
+  displayCat.value = val;
+}
 </script>
 
 <style>
+.orangeHL {
+    text-decoration: underline;
+    text-decoration-color: var(--tert);
+    text-decoration-thickness: 4px;
+  }
 .openingHours a {
   color: var(--text-prim);
 }
 .i_sm {
   font-size: .8em;
+}
+.cats-enter-from {
+  opacity: 0;
+  transform: translate(-60%, 20px);
+}
+.cats-enter-active,
+.cats-leave-active {
+  transition: all .3s ease;
+}
+.cats-enter-to {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.cats-leave-from {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.cats-leave-to {
+  opacity: 0;
+  transform: translate(60%, 20px);
 }
 </style>

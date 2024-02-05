@@ -8,12 +8,11 @@
 
         <nav class="d-flex overflow-x-hidden position-relative justify-content-around align-items-center border border-danger">
             <div class="movingItemsHolder border border-success position-absolute d-flex justify-content-around align-items-center py-2 px-1" ref="movingNav">
-            <span class="mx-2 px-2 rounded-pill bg-grey text-prim border border-black border-2">Öffnungszeiten</span>
-            <span class="mx-2 px-2 rounded-pill bg-grey text-prim border border-black border-2">Über uns</span>
-            <span class="mx-2 px-2 rounded-pill bg-grey text-prim border border-black border-2">Vorspeisen</span>
-            <span class="mx-2 px-2 rounded-pill bg-grey text-prim border border-black border-2">Salate</span>
-            <span class="mx-2 px-2 rounded-pill bg-grey text-prim border border-black border-2">Kebab / Gyros</span>
-            <span class="mx-2 px-2 rounded-pill bg-grey text-prim border border-black border-2">Baguettes</span>
+            <span @click="setCat('aboutUs')" class="mx-2 px-2 rounded-pill bg-grey text-prim border border-black border-2">Über uns</span>
+            <span @click="setCat('vorspeisen')" class="mx-2 px-2 rounded-pill bg-grey text-prim border border-black border-2">Vorspeisen</span>
+            <span @click="setCat('salate')" class="mx-2 px-2 rounded-pill bg-grey text-prim border border-black border-2">Salate</span>
+            <span @click="setCat('kebabs')" class="mx-2 px-2 rounded-pill bg-grey text-prim border border-black border-2">Kebab / Gyros</span>
+            <span @click="setCat('baguettes')" class="mx-2 px-2 rounded-pill bg-grey text-prim border border-black border-2">Baguettes</span>
             </div>
         </nav>
 
@@ -26,8 +25,14 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, defineEmits } from "vue";
+let emits = defineEmits([
+    "set-cat",
+]);
 
+function setCat(val) {
+    emits("set-cat", val);
+}
 const movingNav = ref();
 function swipeRight() {
     let navleft = +((getComputedStyle(movingNav.value).left).replace("px", ""));
